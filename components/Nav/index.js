@@ -42,7 +42,9 @@ export default function Nav() {
           </Link>
         </div>
         <div className='hidden ml-18  justify-center items-center lg:flex md:flex lg:ml-60 md:ml-0'>
-          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer '> TOPS</div>
+          <Link href={'/tops'}>
+            <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer '> TOPS</div>
+          </Link>
           <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>BOTTOMS</div>
           <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>SHOES</div>
           <div className='font-bold hover:text-zinc-600 hover:underline cursor-pointer lg:block md:hidden'>

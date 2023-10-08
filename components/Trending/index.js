@@ -36,7 +36,7 @@ export default function Trending() {
               <div className='p-3 min-h-[32em]'>
                 <div className=''>
                   <Image alt='item photo' src={item.imageUrl} width={250} height={250} />
-                  <div className='flex justify-end mt-[-2em] mb-4 mr-4 hover:text-zinc-500 cursor-pointer'>
+                  <div className='flex justify-end mt-[-2em] mb-4 mr-4 hover:text-zinc-500 cursor-pointer hover:animate-bounce'>
                     <Icon icon='bi:bag-plus' width={25} height={25} />
                   </div>
                 </div>
