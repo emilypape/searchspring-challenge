@@ -28,18 +28,24 @@ export default function Tops() {
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
           <div className='text-xl font-bold'>TOPS</div>
-          <div className='text-xs text-gray-500 mt-2 ml-3'>{tops?.pagination.totalResults} products</div>
+          <div className='text-xs text-gray-500 mt-2 ml-3'>{tops?.pagination?.totalResults} products</div>
         </div>
         <div className='flex justify-center'>
           <div
             onClick={() => setPage(tops?.pagination?.previousPage)}
             className={
-              tops.pagination.currentPage === 1 ? 'mt-1 mr-5 cursor-pointer hidden' : 'mt-1 mr-5 cursor-pointer'
+              tops?.pagination?.currentPage === 1 ? 'mt-1 mr-5 cursor-pointer hidden' : 'mt-1 mr-5 cursor-pointer'
             }>
             <Icon icon='ic:twotone-arrow-back-ios' />
           </div>
           Showing page {tops?.pagination?.currentPage} of {tops?.pagination?.totalPages}
-          <div onClick={() => setPage(tops?.pagination?.nextPage)} className='mt-1 ml-5 cursor-pointer'>
+          <div
+            onClick={() => setPage(tops?.pagination?.nextPage)}
+            className={
+              tops?.pagination?.currentPage === tops?.pagination?.totalPages
+                ? 'mt-1 ml-5 cursor-pointer hidden'
+                : 'mt-1 ml-5 cursor-pointer'
+            }>
             <Icon icon='ic:twotone-arrow-forward-ios' />
           </div>
         </div>
