@@ -48,10 +48,14 @@ export default function Nav() {
           <Link href={'/bottoms'}>
             <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>BOTTOMS</div>
           </Link>
-          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>SHOES</div>
-          <div className='font-bold hover:text-zinc-600 hover:underline cursor-pointer lg:block md:hidden'>
-            ACCESSORIES
-          </div>
+          <Link href={'/shoes'}>
+            <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>SHOES</div>
+          </Link>
+          <Link href={'/accessories'}>
+            <div className='font-bold hover:text-zinc-600 hover:underline cursor-pointer lg:block md:hidden'>
+              ACCESSORIES
+            </div>
+          </Link>
         </div>
         <div className='flex mr-10 '>
           <form method='GET' className='lg:mr-10 md:mr-10 mr-5 mt-5'>
