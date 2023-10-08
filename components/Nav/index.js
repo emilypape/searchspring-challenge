@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
+
+import { useRouter } from 'next/router';
 import { Icon } from '@iconify/react';
-import Image from 'next/image';
-import FashionPhoto from '../../public/assets/images/fashionCover.jpeg';
+import Link from 'next/link';
 
 export default function Nav() {
   const advertisedSentences = [
@@ -11,6 +12,7 @@ export default function Nav() {
   ];
 
   const [sentence, setSentence] = useState('');
+  const router = useRouter();
 
   useEffect(() => {
     let index = 0;
@@ -50,9 +52,9 @@ export default function Nav() {
         </div>
         <div className='flex mr-10 '>
           <form method='GET' className='lg:mr-10 md:mr-10 mr-5 mt-5'>
-            <div class='relative text-gray-600 focus-within:text-gray-400'>
-              <span class='absolute inset-y-0 left-0 flex items-center pl-2'>
-                <button type='submit' class='p-1 focus:outline-none focus:shadow-outline'>
+            <div className='relative text-gray-600 focus-within:text-gray-400'>
+              <span className='absolute inset-y-0 left-0 flex items-center pl-2'>
+                <button type='submit' className='p-1 focus:outline-none focus:shadow-outline'>
                   <svg
                     fill='none'
                     stroke='currentColor'
@@ -68,32 +70,18 @@ export default function Nav() {
               <input
                 type='search'
                 name='q'
-                class='py-2 text-sm text-white bg-gray-200 rounded-md pl-10  focus:outline-none focus:bg-gray-300 focus:text-gray-900'
+                className='py-2 text-sm text-white bg-gray-200 rounded-md pl-10  focus:outline-none focus:bg-gray-300 focus:text-gray-900'
                 placeholder='Search for a Product'
-                autocomplete='off'
               />
             </div>
           </form>
           <div className='flex py-6 px-3'>
-            <Icon className='mr-3 cursor-pointer' icon='iconoir:heart' color='grey' width={25} height={25} />
             <Icon className='cursor-pointer' icon='clarity:shopping-bag-line' color='grey' width={25} height={25} />
           </div>
         </div>
       </div>
       <div className='bg-gray-200 flex justify-center p-2 '>
         <div className='flex text-xs font-bold '>{sentence}</div>
-      </div>
-      <div className='relative text-slate-50 lg:flex hidden'>
-        <Image src={FashionPhoto} />
-        <div className='absolute duration-1000 top-36 left-32 text-3xl font-bold text-center animate-fade-in-up'>
-          MAIN CHARACTER ENERGY
-        </div>
-        <div className='absolute duration-1000 top-52 left-32 text-md  text-center animate-fade-in-up'>
-          Elevated Staples that make you look and feel like "That Girl"
-        </div>
-        <button className='duration-1000 animate-fade-in-up hover:bg-gray-50 hover:text-zinc-800 absolute top-72 left-64 bg-zinc-800 text-gray-50 text-sm p-3 rounded-lg'>
-          Shop trending Looks
-        </button>
       </div>
     </div>
   );

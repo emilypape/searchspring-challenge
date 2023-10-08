@@ -1,11 +1,9 @@
-import Head from 'next/head';
-import Nav from '../components/Nav';
+import Homepage from '../components/Homepage';
 
 export default function Home() {
   return (
     <div>
-      {' '}
-      <Nav />
+      <Homepage />
     </div>
   );
 }

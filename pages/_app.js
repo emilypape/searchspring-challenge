@@ -1,12 +1,7 @@
-import Head from 'next/head';
-import Styles from '../styles/global.css';
-import Nav from '../components/Nav';
+import 'tailwindcss/tailwind.css';
 
-export default function Home() {
-  return (
-    <div>
-      {' '}
-      <Nav />
-    </div>
-  );
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />;
 }
+
+export default MyApp;
