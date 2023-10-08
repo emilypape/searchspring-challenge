@@ -7,7 +7,7 @@ export default function Nav() {
   const advertisedSentences = [
     'Free Standard Shipping over $75',
     '10% off your first purchase',
-    'Check out New Arrivals',
+    'Now Shipping internationally',
   ];
 
   const [sentence, setSentence] = useState('');
@@ -40,8 +40,8 @@ export default function Nav() {
         <div className='mb-2 lg:ml-10 md:ml-10 ml-2'>
           <Icon icon='bxl:figma' width={70} height={70} />
         </div>
-        <div className='hidden ml-18  justify-center items-center lg:flex md:flex'>
-          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'> TOPS</div>
+        <div className='hidden ml-18  justify-center items-center lg:flex md:flex lg:ml-60 md:ml-0'>
+          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer '> TOPS</div>
           <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>BOTTOMS</div>
           <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>SHOES</div>
           <div className='font-bold hover:text-zinc-600 hover:underline cursor-pointer lg:block md:hidden'>
@@ -81,7 +81,7 @@ export default function Nav() {
         </div>
       </div>
       <div className='bg-gray-200 flex justify-center p-2 '>
-        <div className='flex text-xs font-bold animate-fade-in-up'>{sentence}</div>
+        <div className='flex text-xs font-bold '>{sentence}</div>
       </div>
       <div className='relative text-slate-50 lg:flex hidden'>
         <Image src={FashionPhoto} />
@@ -92,7 +92,7 @@ export default function Nav() {
           Elevated Staples that make you look and feel like "That Girl"
         </div>
         <button className='duration-1000 animate-fade-in-up hover:bg-gray-50 hover:text-zinc-800 absolute top-72 left-64 bg-zinc-800 text-gray-50 text-sm p-3 rounded-lg'>
-          Shop the Look
+          Shop trending Looks
         </button>
       </div>
     </div>
