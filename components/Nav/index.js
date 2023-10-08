@@ -1,5 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
+import Image from 'next/image';
+import FashionPhoto from '../../public/assets/images/fashionCover.jpeg';
 
 export default function Nav() {
   return (
@@ -13,18 +15,20 @@ export default function Nav() {
         </div>
         <div className='text-gray-400 px-1'>English</div>
       </div>
-      <div className='shadow-md mb-2 flex justify-between'>
-        <div className='mb-2 ml-10'>
+      <div className='shadow-md flex justify-between'>
+        <div className='mb-2 lg:ml-10 md:ml-10 ml-2'>
           <Icon icon='bxl:figma' width={70} height={70} />
         </div>
-        <div className='flex ml-18  justify-center items-center'>
-          <div className='font-bold mr-5'> TOPS</div>
-          <div className='font-bold mr-5'>BOTTOMS</div>
-          <div className='font-bold mr-5 '>SHOES</div>
-          <div className='font-bold'>ACCESSORIES</div>
+        <div className='hidden ml-18  justify-center items-center lg:flex md:flex'>
+          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'> TOPS</div>
+          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>BOTTOMS</div>
+          <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer'>SHOES</div>
+          <div className='font-bold hover:text-zinc-600 hover:underline cursor-pointer lg:block md:hidden'>
+            ACCESSORIES
+          </div>
         </div>
-        <div className='flex mr-10'>
-          <form method='GET'>
+        <div className='flex mr-10 '>
+          <form method='GET' className='lg:mr-10 md:mr-10 mr-5 mt-5'>
             <div class='relative text-gray-600 focus-within:text-gray-400'>
               <span class='absolute inset-y-0 left-0 flex items-center pl-2'>
                 <button type='submit' class='p-1 focus:outline-none focus:shadow-outline'>
@@ -49,9 +53,23 @@ export default function Nav() {
               />
             </div>
           </form>
-          <Icon icon='iconoir:heart' />
-          <Icon icon='clarity:shopping-bag-line' />
+          <div className='flex py-6 px-3'>
+            <Icon className='mr-3 cursor-pointer' icon='iconoir:heart' color='grey' width={25} height={25} />
+            <Icon className='cursor-pointer' icon='clarity:shopping-bag-line' color='grey' width={25} height={25} />
+          </div>
         </div>
+      </div>
+      <div className='relative text-slate-50 lg:flex hidden'>
+        <Image src={FashionPhoto} />
+        <div className='absolute duration-1000 top-36 left-32 text-3xl font-bold text-center animate-fade-in-up'>
+          MAIN CHARACTER ENERGY
+        </div>
+        <div className='absolute duration-1000 top-52 left-32 text-md  text-center animate-fade-in-up'>
+          Elevated Staples that make you look and feel like "That Girl"
+        </div>
+        <button className='duration-1000 animate-fade-in-up hover:bg-gray-50 hover:text-zinc-800 absolute top-72 left-64 bg-zinc-800 text-gray-50 text-sm p-3 rounded-lg'>
+          Shop the Look
+        </button>
       </div>
     </div>
   );
