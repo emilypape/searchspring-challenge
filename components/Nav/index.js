@@ -1,6 +1,4 @@
 import { useState, useEffect } from 'react';
-
-import { useRouter } from 'next/router';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 
@@ -12,7 +10,6 @@ export default function Nav() {
   ];
 
   const [sentence, setSentence] = useState('');
-  const router = useRouter();
 
   useEffect(() => {
     let index = 0;
@@ -40,7 +37,9 @@ export default function Nav() {
       </div>
       <div className='shadow-md flex justify-between'>
         <div className='mb-2 lg:ml-10 md:ml-10 ml-2'>
-          <Icon icon='bxl:figma' width={70} height={70} />
+          <Link href={'/'}>
+            <Icon icon='bxl:figma' width={70} height={70} />
+          </Link>
         </div>
         <div className='hidden ml-18  justify-center items-center lg:flex md:flex lg:ml-60 md:ml-0'>
           <div className='font-bold mr-5 hover:text-zinc-600 hover:underline cursor-pointer '> TOPS</div>
