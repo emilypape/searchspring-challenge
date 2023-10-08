@@ -15,7 +15,7 @@ export default function Tops() {
     );
 
     const topsPageData = await response.json();
-    console.log(topsPageData);
+
     setTops(topsPageData);
   }
 
@@ -77,6 +77,27 @@ export default function Tops() {
             </div>
           );
         })}
+      </div>
+      <div className='flex justify-center mt-4 mb-5 '>
+        <div
+          onClick={() => setPage(tops?.pagination?.previousPage)}
+          className={
+            tops?.pagination?.currentPage === 1
+              ? 'mt-1 mb-5 mr-5 cursor-pointer hidden'
+              : 'mt-1 mb-5 mr-5 cursor-pointer'
+          }>
+          <Icon icon='ic:twotone-arrow-back-ios' />
+        </div>
+        Showing page {tops?.pagination?.currentPage} of {tops?.pagination?.totalPages}
+        <div
+          onClick={() => setPage(tops?.pagination?.nextPage)}
+          className={
+            tops?.pagination?.currentPage === tops?.pagination?.totalPages
+              ? 'mt-1 mb-5  ml-5 cursor-pointer hidden'
+              : 'mt-1 mb-5  ml-5 cursor-pointer'
+          }>
+          <Icon icon='ic:twotone-arrow-forward-ios' />
+        </div>
       </div>
     </div>
   );
