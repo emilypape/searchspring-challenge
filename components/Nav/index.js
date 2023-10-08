@@ -1,9 +1,30 @@
-import React from 'react';
+import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import FashionPhoto from '../../public/assets/images/fashionCover.jpeg';
 
 export default function Nav() {
+  const advertisedSentences = [
+    'Free Standard Shipping over $75',
+    '10% off your first purchase',
+    'Check out New Arrivals',
+  ];
+
+  const [sentence, setSentence] = useState('');
+
+  useEffect(() => {
+    let index = 0;
+    setSentence(advertisedSentences[index]);
+    const interval = setInterval(() => {
+      index = (index + 1) % 3;
+      setSentence(advertisedSentences[index]);
+    }, 5000);
+
+    return () => {
+      return clearInterval(interval);
+    };
+  }, []);
+
   return (
     <div>
       <div className='bg-gray-200 flex justify-end p-2 mb-2'>
@@ -58,6 +79,9 @@ export default function Nav() {
             <Icon className='cursor-pointer' icon='clarity:shopping-bag-line' color='grey' width={25} height={25} />
           </div>
         </div>
+      </div>
+      <div className='bg-gray-200 flex justify-center p-2 '>
+        <div className='flex text-xs font-bold animate-fade-in-up'>{sentence}</div>
       </div>
       <div className='relative text-slate-50 lg:flex hidden'>
         <Image src={FashionPhoto} />
