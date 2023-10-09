@@ -20,12 +20,21 @@ export default function Shoes() {
     setShoes(shoesPageData);
   }
 
+  const handleClickScroll = (el) => {
+    const element = document.getElementById(el);
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     getShoesPage();
   }, [page]);
+
   return (
     <div>
-      <div className='ml-12 mt-2'>
+      <div id='topOfPage' className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
           <div className='text-xl font-bold'>SHOES</div>
@@ -81,7 +90,10 @@ export default function Shoes() {
       </div>
       <div className='flex justify-center mt-4 mb-5 '>
         <div
-          onClick={() => setPage(shoes?.pagination?.previousPage)}
+          onClick={() => {
+            setPage(shoes?.pagination?.previousPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             shoes?.pagination?.currentPage === 1
               ? 'mt-1 mb-5 mr-5 cursor-pointer hidden'
@@ -91,7 +103,10 @@ export default function Shoes() {
         </div>
         Showing page {shoes?.pagination?.currentPage} of {shoes?.pagination?.totalPages}
         <div
-          onClick={() => setPage(shoes?.pagination?.nextPage)}
+          onClick={() => {
+            setPage(shoes?.pagination?.nextPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             shoes?.pagination?.currentPage === shoes?.pagination?.totalPages
               ? 'mt-1 mb-5  ml-5 cursor-pointer hidden'

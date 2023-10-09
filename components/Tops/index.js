@@ -20,12 +20,20 @@ export default function Tops() {
     setTops(topsPageData);
   }
 
+  const handleClickScroll = (el) => {
+    const element = document.getElementById(el);
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     getTopsPage();
   }, [page]);
   return (
     <div>
-      <div className='ml-12 mt-2'>
+      <div id='topOfPage' className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
           <div className='text-xl font-bold'>TOPS</div>
@@ -81,7 +89,10 @@ export default function Tops() {
       </div>
       <div className='flex justify-center mt-4 mb-5 '>
         <div
-          onClick={() => setPage(tops?.pagination?.previousPage)}
+          onClick={() => {
+            setPage(tops?.pagination?.previousPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             tops?.pagination?.currentPage === 1
               ? 'mt-1 mb-5 mr-5 cursor-pointer hidden'
@@ -91,7 +102,10 @@ export default function Tops() {
         </div>
         Showing page {tops?.pagination?.currentPage} of {tops?.pagination?.totalPages}
         <div
-          onClick={() => setPage(tops?.pagination?.nextPage)}
+          onClick={() => {
+            setPage(tops?.pagination?.nextPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             tops?.pagination?.currentPage === tops?.pagination?.totalPages
               ? 'mt-1 mb-5  ml-5 cursor-pointer hidden'

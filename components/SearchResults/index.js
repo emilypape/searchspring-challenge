@@ -27,6 +27,14 @@ export default function SearchResults() {
     }
   }
 
+  const handleClickScroll = (el) => {
+    const element = document.getElementById(el);
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     if (router.isReady) {
       const { id } = router.query;
@@ -41,7 +49,7 @@ export default function SearchResults() {
 
   return (
     <div>
-      <div className='ml-12 mt-2'>
+      <div id='topOfPage' className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
           <div className='text-xl font-bold'>{searchQuery?.toUpperCase()}</div>
@@ -99,7 +107,10 @@ export default function SearchResults() {
       </div>
       <div className='flex justify-center mt-4 mb-5 '>
         <div
-          onClick={() => setPage(searchResultData?.pagination?.previousPage)}
+          onClick={() => {
+            setPage(searchResultData?.pagination?.previousPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             searchResultData?.pagination?.currentPage === 1
               ? 'mt-1 mb-5 mr-5 cursor-pointer hidden'
@@ -109,7 +120,10 @@ export default function SearchResults() {
         </div>
         Showing page {searchResultData?.pagination?.currentPage} of {searchResultData?.pagination?.totalPages}
         <div
-          onClick={() => setPage(searchResultData?.pagination?.nextPage)}
+          onClick={() => {
+            setPage(searchResultData?.pagination?.nextPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             searchResultData?.pagination?.currentPage === searchResultData?.pagination?.totalPages
               ? 'mt-1 mb-5  ml-5 cursor-pointer hidden'

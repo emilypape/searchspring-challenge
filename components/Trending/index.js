@@ -19,12 +19,20 @@ export default function Trending() {
     setTrending(trendingData);
   }
 
+  const handleClickScroll = (el) => {
+    const element = document.getElementById(el);
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     fetchTrending();
   }, [page]);
   return (
     <div>
-      <div className='ml-12 mt-2'>
+      <div id='TopOfPage' className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
           <div className='text-xl font-bold'>TRENDING</div>
@@ -79,7 +87,10 @@ export default function Trending() {
       </div>
       <div className='flex justify-center mt-4 mb-5'>
         <div
-          onClick={() => setPage(trending?.pagination?.previousPage)}
+          onClick={() => {
+            setPage(trending?.pagination?.previousPage);
+            handleClickScroll('TopOfPage');
+          }}
           className={
             trending?.pagination?.currentPage === 1 ? 'mt-1 mr-5 cursor-pointer hidden' : 'mt-1 mr-5 cursor-pointer'
           }>
@@ -87,7 +98,10 @@ export default function Trending() {
         </div>
         Showing page {trending?.pagination?.currentPage} of {trending?.pagination?.totalPages}
         <div
-          onClick={() => setPage(trending?.pagination?.nextPage)}
+          onClick={() => {
+            setPage(trending?.pagination?.nextPage);
+            handleClickScroll('TopOfPage');
+          }}
           className={
             trending?.pagination?.currentPage === trending?.pagination?.totalPages
               ? 'mt-1 ml-5 cursor-pointer hidden'

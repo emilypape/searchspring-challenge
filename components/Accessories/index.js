@@ -20,12 +20,20 @@ export default function Accessories() {
     setAccessories(accessoriesPageData);
   }
 
+  const handleClickScroll = (el) => {
+    const element = document.getElementById(el);
+    if (element) {
+      // 👇 Will scroll smoothly to the top of the next section
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+  };
+
   useEffect(() => {
     getAccessoriesPage();
   }, [page]);
   return (
     <div>
-      <div className='ml-12 mt-2'>
+      <div id='topOfPage' className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
           <div className='text-xl font-bold'>ACCESSORIES</div>
@@ -83,7 +91,10 @@ export default function Accessories() {
       </div>
       <div className='flex justify-center mt-4 mb-5 '>
         <div
-          onClick={() => setPage(accessories?.pagination?.previousPage)}
+          onClick={() => {
+            setPage(accessories?.pagination?.previousPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             accessories?.pagination?.currentPage === 1
               ? 'mt-1 mb-5 mr-5 cursor-pointer hidden'
@@ -93,7 +104,10 @@ export default function Accessories() {
         </div>
         Showing page {accessories?.pagination?.currentPage} of {accessories?.pagination?.totalPages}
         <div
-          onClick={() => setPage(accessories?.pagination?.nextPage)}
+          onClick={() => {
+            setPage(accessories?.pagination?.nextPage);
+            handleClickScroll('topOfPage');
+          }}
           className={
             accessories?.pagination?.currentPage === accessories?.pagination?.totalPages
               ? 'mt-1 mb-5  ml-5 cursor-pointer hidden'
