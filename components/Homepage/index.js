@@ -9,16 +9,16 @@ export default function Home() {
   return (
     <div>
       <Nav />
-      <div className='relative text-slate-50 lg:flex hidden'>
+      <div className='relative lg:text-slate-50 md:text-slate-50  flex flex-col '>
         <Image src={FashionPhoto} alt='Fashion Model Picture' />
-        <div className='absolute duration-1000 top-36 left-32 text-3xl font-bold text-center animate-fade-in-up'>
+        <div className='lg:mt-0 md:mt-0 mt-10 lg:absolute md:absolute duration-1000 lg:top-36 md:top-24 lg:left-32 md:left-24 lg:text-3xl font-bold text-center animate-fade-in-up'>
           MAIN CHARACTER ENERGY
         </div>
-        <div className='absolute duration-1000 top-52 left-32 text-md  text-center animate-fade-in-up'>
+        <div className='lg:mt-0 md:mt-0 mt-3 lg:absolute md:absolute duration-1000 lg:top-52 lg:left-32 md:top-36 md:left-24 text-md  text-center animate-fade-in-up'>
           Elevated Staples that make you look and feel like "That Girl"
         </div>
         <Link href={`/trending`}>
-          <button className='duration-1000 animate-fade-in-up hover:bg-gray-50 hover:text-zinc-800 absolute top-72 left-64 bg-zinc-800 text-gray-50 text-sm p-3 rounded-lg'>
+          <button className=' lg:mt-0 md:mt-0 mt-3  lg:ml-0 md:ml-0 ml-[8.5em] duration-1000 animate-fade-in-up hover:bg-gray-50 hover:text-zinc-800 lg:absolute  md:absolute lg:top-72 lg:left-64 md:top-52 md:left-52 bg-zinc-800 text-gray-50 text-sm p-3 rounded-lg'>
             Shop trending Looks
           </button>
         </Link>

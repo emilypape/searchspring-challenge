@@ -4,7 +4,7 @@ import { CountProvider } from './CartContext';
 function MyApp({ Component, pageProps }) {
   return (
     <CountProvider>
-      <Component {...pageProps} />;
+      <Component {...pageProps} />
     </CountProvider>
   );
 }
