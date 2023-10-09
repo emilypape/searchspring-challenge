@@ -27,7 +27,7 @@ export default function Bottoms() {
       <div className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
-          <div className='text-xl font-bold'>Bottoms</div>
+          <div className='text-xl font-bold'>BOTTOMS</div>
           <div className='text-xs text-gray-500 mt-2 ml-3'>{bottoms?.pagination?.totalResults} products</div>
         </div>
         <div className='flex justify-center'>

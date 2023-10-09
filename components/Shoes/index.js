@@ -27,7 +27,7 @@ export default function Shoes() {
       <div className='ml-12 mt-2'>
         <div className='text-sm font-bold text-zinc-600'>WOMENS</div>
         <div className='flex'>
-          <div className='text-xl font-bold'>Shoes</div>
+          <div className='text-xl font-bold'>SHOES</div>
           <div className='text-xs text-gray-500 mt-2 ml-3'>{shoes?.pagination?.totalResults} products</div>
         </div>
         <div className='flex justify-center'>
