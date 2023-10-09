@@ -1,7 +1,7 @@
 import React from 'react';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
-import { useCount } from '../../pages/CartContext';
+import { useCount } from '../../CartContext';
 
 const ProductCard = ({ item }) => {
   const { increment } = useCount();

@@ -2,7 +2,7 @@ import { useState, useEffect, useContext, createContext } from 'react';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import { useCount } from '../../pages/CartContext';
+import { useCount } from '../../CartContext';
 
 export default function Nav() {
   const advertisedSentences = [
