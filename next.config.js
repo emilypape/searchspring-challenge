@@ -20,6 +20,7 @@ const nextConfig = {
   basePath: basePath,
   images: {
     domains: ['searchspring-demo-content.s3.amazonaws.com'],
+    unoptimized: true,
   },
 };
 
