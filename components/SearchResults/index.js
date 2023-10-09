@@ -2,6 +2,7 @@ import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import { useRouter } from 'next/router';
+import Footer from '../Footer';
 
 export default function SearchResults() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -117,6 +118,7 @@ export default function SearchResults() {
           <Icon icon='ic:twotone-arrow-forward-ios' />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

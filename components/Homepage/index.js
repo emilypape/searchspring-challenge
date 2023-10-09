@@ -3,6 +3,7 @@ import Nav from '../Nav';
 import Image from 'next/image';
 import FashionPhoto from '../../public/assets/images/fashionCover.jpeg';
 import Link from 'next/link';
+import Footer from '../Footer';
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
           </button>
         </Link>
       </div>
+      <Footer />
     </div>
   );
 }

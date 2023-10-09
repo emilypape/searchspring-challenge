@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
+import Footer from '../Footer';
 
 export default function Bottoms() {
   const [bottoms, setBottoms] = useState();
@@ -99,6 +100,7 @@ export default function Bottoms() {
           <Icon icon='ic:twotone-arrow-forward-ios' />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

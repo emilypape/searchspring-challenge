@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
+import Footer from '../Footer';
 export default function Trending() {
   const [trending, setTrending] = useState();
   const [page, setPage] = useState(1);
@@ -95,6 +96,7 @@ export default function Trending() {
           <Icon icon='ic:twotone-arrow-forward-ios' />
         </div>
       </div>
+      <Footer />
     </div>
   );
 }
