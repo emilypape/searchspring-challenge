@@ -8,7 +8,7 @@ export default function Tops() {
 
   async function getTopsPage() {
     const response = await fetch(
-      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=tops&resultsFormat=native&page=${page}`,
+      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=tops&resultsPerPage=25&resultsFormat=native&page=${page}`,
       {
         method: 'Get',
       },

@@ -7,7 +7,7 @@ export default function Trending() {
 
   async function fetchTrending() {
     const response = await fetch(
-      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=trending&resultsFormat=native&page=${page}`,
+      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=trending&resultsPerPage=25&resultsFormat=native&page=${page}`,
       {
         method: 'Get',
       },

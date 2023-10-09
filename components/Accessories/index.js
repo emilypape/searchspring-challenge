@@ -8,7 +8,7 @@ export default function Accessories() {
 
   async function getAccessoriesPage() {
     const response = await fetch(
-      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=accessories&resultsFormat=native&page=${page}`,
+      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=accessories&resultsPerPage=25&resultsFormat=native&page=${page}`,
       {
         method: 'Get',
       },

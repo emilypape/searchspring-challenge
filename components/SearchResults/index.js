@@ -14,7 +14,7 @@ export default function SearchResults() {
       const response = await fetch(
         `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=${
           id || searchQuery
-        }&resultsFormat=native&page=${page}`,
+        }&resultsPerPage=25&resultsFormat=native&page=${page}`,
         {
           method: 'Get',
         },

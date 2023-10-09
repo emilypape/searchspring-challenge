@@ -8,7 +8,7 @@ export default function Shoes() {
 
   async function getShoesPage() {
     const response = await fetch(
-      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=shoes&resultsFormat=native&page=${page}`,
+      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=shoes&resultsPerPage=25&resultsFormat=native&page=${page}`,
       {
         method: 'Get',
       },

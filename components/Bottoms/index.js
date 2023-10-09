@@ -8,7 +8,7 @@ export default function Bottoms() {
 
   async function getBottomsPage() {
     const response = await fetch(
-      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=bottoms&resultsFormat=native&page=${page}`,
+      `https://api.searchspring.net/api/search/search.json?siteId=scmq7n&q=bottoms&resultsPerPage=25&resultsFormat=native&page=${page}`,
       {
         method: 'Get',
       },
