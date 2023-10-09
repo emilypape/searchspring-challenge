@@ -4,9 +4,8 @@
   "scripts": {
     "build": "next build",
     "export": "next export",
-    "deploy": "gh-pages -b project-deploy -d build",
     "dev": "next dev",
-    "start": "next start"
+    "start": "npx serve@latest out"
   },
   "dependencies": {
     "next": "latest",
