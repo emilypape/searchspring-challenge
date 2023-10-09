@@ -1,7 +1,9 @@
 {
   "private": true,
+  "homepage": "http://emilypape.github.io/emily_portfolio_2023",
   "scripts": {
     "build": "next build",
+    "deploy": "gh-pages -b project-deploy -d build",
     "dev": "next dev",
     "start": "next start"
   },
