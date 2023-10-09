@@ -2,6 +2,12 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  output: 'export',
+  assetPrefix: assetPrefix,
+  basePath: basePath,
+  images: {
+    domains: ['searchspring-demo-content.s3.amazonaws.com'],
+  },
 };
 
 const isGithubActions = process.env.GITHUB_ACTIONS || false;
@@ -16,10 +22,4 @@ if (isGithubActions) {
   basePath = `/${repo}`;
 }
 
-module.exports = {
-  assetPrefix: assetPrefix,
-  basePath: basePath,
-  images: {
-    domains: ['searchspring-demo-content.s3.amazonaws.com'],
-  },
-};
+module.exports = nextConfig;
