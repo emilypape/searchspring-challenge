@@ -1,6 +1,6 @@
 {
   "private": true,
-  "homepage": "http://emilypape.github.io/emily_portfolio_2023",
+  "homepage": "http://emilypape.github.io/searchspring-challenge",
   "scripts": {
     "build": "next build",
     "deploy": "gh-pages -b project-deploy -d build",
