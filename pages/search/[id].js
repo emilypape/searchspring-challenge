@@ -1,7 +1,5 @@
-import Nav from '../../components/nav';
-import { useRouter } from 'next/router';
-import SearchResults from '../../components/SearchResults';
-import { useState, useEffect } from 'react';
+import Nav from '../../components/Nav/index';
+import SearchResults from '../../components/SearchResults/index';
 
 export default function SpecificCookbookRoute() {
   return (
