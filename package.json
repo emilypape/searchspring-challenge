@@ -3,6 +3,7 @@
   "homepage": "http://emilypape.github.io/searchspring-challenge",
   "scripts": {
     "build": "next build",
+    "export": "next export",
     "deploy": "gh-pages -b project-deploy -d build",
     "dev": "next dev",
     "start": "next start"
