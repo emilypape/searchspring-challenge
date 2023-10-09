@@ -1,7 +1,8 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useContext, createContext } from 'react';
 import { Icon } from '@iconify/react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { useCount } from '../../pages/CartContext';
 
 export default function Nav() {
   const advertisedSentences = [
@@ -12,7 +13,9 @@ export default function Nav() {
 
   const [sentence, setSentence] = useState('');
   const [searchQuery, setSearchQuery] = useState('');
+  const { count } = useCount();
   const router = useRouter();
+
   function handleChange(e) {
     setSearchQuery(e.target.value);
   }
@@ -98,6 +101,7 @@ export default function Nav() {
           </form>
           <div className='flex py-6 px-3'>
             <Icon className='cursor-pointer' icon='clarity:shopping-bag-line' color='grey' width={25} height={25} />
+            <div>{count}</div>
           </div>
         </div>
       </div>
